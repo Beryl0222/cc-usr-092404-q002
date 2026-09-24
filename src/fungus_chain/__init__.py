@@ -1,5 +1,84 @@
-"""领域数据合同。"""
+"""野生菌样本联检：严格证据入口、保管链台账与可恢复联检执行器。"""
 
+from .commands import (
+    CMD_CONSUME,
+    CMD_CREATE_CONCLUSION,
+    CMD_INTAKE,
+    CMD_ISSUE_CONCLUSION,
+    CMD_RESULT,
+    CMD_REVISE_CONCLUSION,
+    CMD_SPLIT,
+    CMD_SUPPLEMENT,
+    COMMANDS,
+    PANEL_TESTS,
+    TEST_MORPHOLOGY,
+    TEST_MOLECULAR,
+    TEST_TOXIN,
+    validate_command,
+)
 from .contracts import DomainRecord, load_record
+from .ingress import (
+    EvidenceIngress,
+    EvidenceRejected,
+    IngressResult,
+    Issue,
+    QuarantineRecord,
+    parse_document,
+)
+from .ledger import (
+    BusinessRuleError,
+    ChainLedger,
+    Conclusion,
+    ConclusionVersion,
+    Correction,
+    CustodyEvent,
+    HoldRecord,
+    NotificationRecord,
+    ResultRecord,
+    Sample,
+    SubmissionOutcome,
+)
+from .runner import PanelRunner, RunReport, ServiceInterrupted, Step, StepReport
+from . import messages
 
-__all__ = ["DomainRecord", "load_record"]
+__all__ = [
+    "BusinessRuleError",
+    "CMD_CONSUME",
+    "CMD_CREATE_CONCLUSION",
+    "CMD_INTAKE",
+    "CMD_ISSUE_CONCLUSION",
+    "CMD_RESULT",
+    "CMD_REVISE_CONCLUSION",
+    "CMD_SPLIT",
+    "CMD_SUPPLEMENT",
+    "COMMANDS",
+    "ChainLedger",
+    "Conclusion",
+    "ConclusionVersion",
+    "Correction",
+    "CustodyEvent",
+    "DomainRecord",
+    "EvidenceIngress",
+    "EvidenceRejected",
+    "HoldRecord",
+    "IngressResult",
+    "Issue",
+    "NotificationRecord",
+    "PANEL_TESTS",
+    "PanelRunner",
+    "QuarantineRecord",
+    "ResultRecord",
+    "RunReport",
+    "Sample",
+    "ServiceInterrupted",
+    "Step",
+    "StepReport",
+    "SubmissionOutcome",
+    "TEST_MORPHOLOGY",
+    "TEST_MOLECULAR",
+    "TEST_TOXIN",
+    "load_record",
+    "messages",
+    "parse_document",
+    "validate_command",
+]
